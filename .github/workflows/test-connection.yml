@@ -21,8 +21,10 @@ jobs:
 
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
+      with:
+        project_id: woodb-agent-project
 
     - name: Verify GCP Project Access
       run: |
-        gcloud info
+        gcloud auth list
         gcloud projects describe woodb-agent-project
